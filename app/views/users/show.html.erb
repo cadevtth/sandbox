@@ -1,0 +1,36 @@
+<h1><%= link_to "Authorize Facebook", "https://www.facebook.com/dialog/oauth?client_id=#{client_id}&redirect_uri=http://localhost:3000/auth&state=SOME_ARBITRARY_BUT_UNIQUE_STRING&scope=friends_location" %></h1>
+
+<h1><%= link_to "Pull Friend List", pull_friends_url %></h1>
+
+
+
+<%= gmaps4rails(@json) %>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Facebook access token:</b>
+  <%= @user.facebook_access_token %>
+</p>
+
+<p>
+  <b>Facebook User ID:</b>
+  <%= @user.facebook_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @user.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
